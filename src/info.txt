@@ -1,0 +1,20 @@
+PC Engine (CD)/TurboGrafx 16 (CD)/SuperGrafx
+
+https://mednafen.github.io/documentation/pce.html
+https://mednafen.github.io/documentation/pce_fast.html
+
+
+	'The "pce_fast" emulation module is an experimental alternative to the pce emulation module. 
+	It is a fork of 0.8.x modified for speed at the expense of (usually) unneeded accuracy(this 
+	compares to the "pce" module, which traded speed away in favor of accuracy).
+
+	To use this module rather than the "pce" module, you must either set the "pce.enable" 
+	setting to "0", or pass "-force_module pce_fast" to Mednafen each time it is invoked'
+
+
+notes:
+	1) "trio" folder is a "a better printf"
+	2) I tried to strip off stuff not used for "HES" without going into the details of the 
+	   code (I hope that by cutting lose respective unused stuff, the optimized will get rid of the rest).
+	   By commenting-out rather than removing, it should be easier to compare the code to 
+	   future versions of the mednafen project.

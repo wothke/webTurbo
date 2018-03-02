@@ -1,0 +1,1 @@
+This code is based on "mednafen" (https://mednafen.github.io/releases/) version 1.21.0-UNSTABLE.
