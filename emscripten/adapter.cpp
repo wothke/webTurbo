@@ -234,6 +234,9 @@ extern "C" EMSCRIPTEN_KEEPALIVE int emu_init(char *basedir, char *songmodule)
 		displayname= displayname.substr((n<displayname.length())? n : 0);
 		
 		snprintf(title_str, TEXT_MAX, "%s", displayname.c_str());
+
+		uint8 track= MDFN_IEN_PCE::HES_GetTrack();	// read default
+		snprintf(track_str, TEXT_MAX, "%d", track);
 		
 		return 0;
 	 }
@@ -261,8 +264,8 @@ extern "C" int EMSCRIPTEN_KEEPALIVE emu_set_subsong(int subsong, unsigned char b
 	if (subsong > 0) {
 		MDFN_IEN_PCE::HES_SetTrack((uint8)subsong-1);
 	}
-	uint8 track= MDFN_IEN_PCE::HES_GetTrack();	// also read default when not set explicitly
-	snprintf(track_str, TEXT_MAX, "%d", track);
+	//uint8 track= MDFN_IEN_PCE::HES_GetTrack();	// also read default when not set explicitly
+	//snprintf(track_str, TEXT_MAX, "%d", track);
 	
 	return 0;
 }
